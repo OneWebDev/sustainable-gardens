@@ -92,7 +92,22 @@
                     </span>    
                 </li> -->
             </ul>
+            
         </div>
+
+        <ul class="mt-4">
+            <li v-for="(item, index) in examplePlot.attr" :key="index" 
+            class="flex items-center p-3 py-1 ml-3 mx-8 rounded-l-full">
+                <img :src="`./icons/${index}.svg`" class="inline-block ml-12 w-8">
+                <span class="text-xl ml-6" style="width: 100%;">
+                    <strong>
+                        {{index}}
+                    </strong>
+                </span>    
+                {{item}}
+            </li>
+        </ul>
+
         
     </div>
 </div>

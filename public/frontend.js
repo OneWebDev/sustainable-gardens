@@ -20,6 +20,7 @@ new Vue({
                 health: "good",
                 water: "good",
                 humidity: "good",
+                light: "good",
                 size: "good"
             }
         },
