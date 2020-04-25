@@ -15,6 +15,14 @@ new Vue({
                 type: "AVL Tree"
             }
         },
+        examplePlot: {
+            attr: {
+                health: "good",
+                water: "good",
+                humidity: "good",
+                size: "good"
+            }
+        },
         activePlot: 4
     },
     methods: {

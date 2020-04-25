@@ -48,7 +48,7 @@
         <h1 class="text-4xl font-bold mt-16 tracking-wide">
             Progress
         </h1>
-        <div class="progress-list mr-8" style="max-width: 750px;">
+        <div class="progress-list" style="max-width: 750px;">
             <div v-for="(plot, index) in plots" :key="index" 
             @click="newActivePlot(index)"
             :class="(index == activePlot) ? 'mt-4 valid-plot' : 'mt-4'" 
@@ -63,7 +63,7 @@
                             {{plot.type}}
                         </h2>
                     </div>
-                    <div class="inline-block align-bottom text-lg font-bold mt-10 mr-10" style="float: right;">
+                    <div class="inline-block align-bottom text-lg font-bold mt-10 mr-2" style="float: right;">
                         Age: 5 days
                     </div>
                 </div>
@@ -71,6 +71,29 @@
         </div>
     </div>
 </div><div class="right-sidebar">
-    c
+    <div class="mt-16">
+        <div style="background-color: #F4F9F3; padding-bottom: 1px;" class="rrrr">
+            <h1 class="text-3xl font-bold tracking-wide ml-12 p-4">
+                Fenwick Tree
+            </h1>
+            <ul>
+                <li class="flex items-center mb-2 p-1 ml-64 rounded-l-full sidebar-active">
+                    <span class="text-xl text-white ml-6">
+                        Plant Details    
+                </li>
+                <li class="flex items-center mb-2 p-1 ml-64 rounded-l-full">
+                    <span class="text-xl ml-6">
+                        Growing Guide
+                    </span>    
+                </li>
+                <!-- <li class="flex items-center mb-2 p-1 ml-64 rounded-l-full">
+                    <span class="text-xl ml-6">
+                        Plant Settings
+                    </span>    
+                </li> -->
+            </ul>
+        </div>
+        
+    </div>
 </div>
 
