@@ -1,0 +1,30 @@
+.page-wrapper > div {
+    display: inline-block;
+    vertical-align: top;
+    min-height: 100vh;
+}
+
+.left-sidebar {
+    width: 220px;
+    height: 100vh;
+    background-color: #32a05f;
+}
+
+.main-page {
+    width: calc(100vw - 240px - 500px - 20px);
+}
+
+.right-sdebar {
+    width: 500px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .main-page {
+        width: calc(100vw - 500px - 20px);
+    }
+    .left-sidebar {
+        display: none;
+        width: 0px;
+    }
+}
+  
