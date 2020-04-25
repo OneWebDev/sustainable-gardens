@@ -95,7 +95,7 @@
             
         </div>
 
-        <ul class="mt-4">
+        <ul class="mt-8">
             <li v-for="(item, index) in examplePlot.attr" :key="index" 
             class="flex items-center p-3 py-1 ml-3 mx-8 rounded-l-full">
                 <img :src="`./icons/${index}.svg`" class="inline-block ml-12 w-8">
@@ -108,7 +108,47 @@
             </li>
         </ul>
 
-        
+        <div class="mt-8">
+            <span v-for="(item, index) in categories" :key="index">
+                <span v-if="selectedCategory == item" 
+                class="text-2xl font-black text-black px-5 tracking-wide">
+                    {{item}}
+                </span>
+                <span v-else @click="changeCategory(item)"
+                class="text-2xl font-black text-gray-400 px-5 tracking-wide hover:text-black cursor-pointer">
+                    {{item}}
+                </span>
+            </span>
+        </div>
+        <div class="mt-2">
+            <div v-if="selectedCategory == 'Action Items'">
+                <div v-for="(item, index) in examplePlot.actions" :key="index" 
+                style="border-radius: 20px; background-color: #F4F9F3; border: 5px solid #F4F9F3;"
+                class="mt-3 p-2 px-4 actionItems"
+                @click="postNewAction(item.type)"
+                >
+                    <h2 class="text-xl">
+                        <strong>{{item.title}}</strong>
+                    </h2>
+                    <h2 class="text-lg">
+                        {{item.desc}}
+                </h2>
+                </div>
+            </div>
+            <div v-else-if="selectedCategory == 'Snapshots'">
+                <div v-for="(item, index) in examplePlot.snapshots" :key="index">
+                    <div class="mt-4">
+                        <strong class="text-lg">
+                            {{moment(item.date).format("MMMM DD YYYY")}} - 
+                            {{moment(item.date).fromNow()}}
+                        </strong>
+                        <div class="w-64">
+                            <img :src="item.src" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

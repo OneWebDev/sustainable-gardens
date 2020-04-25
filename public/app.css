@@ -64,6 +64,11 @@
     cursor: pointer;
 }
 
+.actionItems:hover {
+    background-color: rgba(115, 175, 134, 0.3)!important;
+    border: 5px solid #73AF86!important;
+    cursor: pointer;
+}
 
 .plant-grid {
     width: 600px;
