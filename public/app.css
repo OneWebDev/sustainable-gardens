@@ -11,20 +11,36 @@
 }
 
 .main-page {
-    width: calc(100vw - 240px - 500px - 20px);
+    width: calc(100vw - 240px - 400px - 20px);
 }
 
 .right-sdebar {
-    width: 500px;
+    width: 400px;
+}
+
+.better-container {
+    max-width: 900px;
+    margin-left: 150px;
 }
 
 @media only screen and (max-width: 1200px) {
     .main-page {
-        width: calc(100vw - 500px - 20px);
+        width: calc(100vw - 400px - 20px);
+    }
+    .better-container {
+        padding: 10px;
+        padding-left: 10px;
+        margin: 10px;
     }
     .left-sidebar {
         display: none;
         width: 0px;
+    }
+    .sidebar-active {
+        background-color: white;
+    }
+    .sidebar-active {
+        display: none;       
     }
 }
 .sidebar-active {
@@ -34,4 +50,39 @@
 .left-sidebar > ul > li:hover:not(.sidebar-active) {
     background-color: #279152;
     cursor: pointer;
+}
+
+
+.plant-grid {
+    width: 600px;
+}
+
+.plot-background {
+    width: 115px;
+    margin: 5px;
+    height: 100px;
+    display: inline-block;
+    background-color: #EAF4ED;
+}
+
+.valid-plot {
+    background-color: rgba(115, 175, 134, 0.3);
+    border: 5px solid #73AF86;
+}
+
+.plant-icon-main {
+    fill: #73AF86;
+    color: #73AF86;
+}
+
+/* .valid-plot:hover + .hover-img-icon {
+    opacity: 1;
+} */
+.hover-img-icon {
+    opacity: 0;
+}
+.valid-plot:hover .hover-img-icon{
+    opacity: .6;
+    cursor: pointer;
+    /* background-color: #EAF4ED; */
 }

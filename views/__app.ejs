@@ -29,9 +29,21 @@
         </li>
     </ul>
 </div><div class="main-page">
-    <div class="container">
-
+    <div class="better-container">
+        <h1 class="text-4xl font-bold mt-16 tracking-wide">
+            My Plants
+        </h1>
+        <div class="plant-grid mt-2">
+            <div v-for="n in 8" class="inline-block">
+                <div class="plot-background inline-block rounded-lg" v-if="! (n in plots)">
+                </div>
+                <div class="plot-background inline-block rounded-lg valid-plot" v-else>
+                    <img src="./icons/plant_filled.svg" class="plant-icon-main" style="width: 60px; margin: 20px;" v-if="activePlot == n">
+                    <img src="./icons/plant_filled.svg" class="plant-icon-main hover-img-icon" style="width: 60px; margin: 20px;" v-if="activePlot != n">
+                </div>
+            </div>
+        </div>
     </div>
-</div><div class="right-sdebar">
+</div><div class="right-sidebar">
     c
 </div>
