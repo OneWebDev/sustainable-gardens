@@ -27,4 +27,11 @@
         width: 0px;
     }
 }
-  
+.sidebar-active {
+    background-color: #279152;
+}
+
+.left-sidebar > ul > li:hover:not(.sidebar-active) {
+    background-color: #279152;
+    cursor: pointer;
+}
