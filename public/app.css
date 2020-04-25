@@ -66,8 +66,8 @@
 }
 
 .valid-plot {
-    background-color: rgba(115, 175, 134, 0.3);
-    border: 5px solid #73AF86;
+    background-color: rgba(115, 175, 134, 0.3)!important;
+    border: 5px solid #73AF86!important;
 }
 
 .plant-icon-main {
@@ -85,4 +85,14 @@
     opacity: .6;
     cursor: pointer;
     /* background-color: #EAF4ED; */
+}
+
+.progress-list > div {
+    background-color: #F4F9F3;
+}
+
+.progress-list > div:hover:not(.valid-plot) {
+    background-color: rgba(115, 175, 134, 0.3)!important;
+    border: 5px solid #73AF86!important;
+    cursor: pointer;
 }
