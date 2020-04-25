@@ -16,5 +16,10 @@ new Vue({
             }
         },
         activePlot: 4
-    }
+    },
+    methods: {
+        newActivePlot(n) {
+            this.activePlot = n;
+        }
+    },
 })
