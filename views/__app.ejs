@@ -50,6 +50,7 @@
         </h1>
         <div class="progress-list mr-8" style="max-width: 750px;">
             <div v-for="(plot, index) in plots" :key="index" 
+            @click="newActivePlot(index)"
             :class="(index == activePlot) ? 'mt-4 valid-plot' : 'mt-4'" 
             style="border-radius: 20px; border: 5px solid #F4F9F3;">
                 <div class="p-3">
