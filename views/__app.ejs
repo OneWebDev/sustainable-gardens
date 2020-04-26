@@ -56,7 +56,7 @@
         <h1 class="text-4xl font-bold mt-16 tracking-wide">
             Progress
         </h1>
-        <div class="progress-list" style="max-width: 750px;">
+        <div class="progress-list mb-2" style="max-width: 750px;">
             <div v-for="(plot, index) in plots" :key="index" 
             @click="newActivePlot(index)"
             :class="(index == activePlot) ? 'mt-4 valid-plot' : 'mt-4'" 
