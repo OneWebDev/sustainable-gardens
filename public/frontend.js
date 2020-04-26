@@ -34,6 +34,16 @@ new Vue({
                     title: "Fertilize",
                     desc: "These plants need to be fertilized",
                     type: "fertilize"
+                },
+                {
+                    title: "Enable Light",
+                    desc: "Turn on additional lighting.",
+                    type: "enablelight"
+                },
+                {
+                    title: "Disable Light",
+                    desc: "Disable additional lighting.",
+                    type: "disablelight"
                 }
             ],
             snapshots: [
@@ -52,7 +62,7 @@ new Vue({
             ]
         },
         categories: ['Action Items', 'Snapshots', 'Live'],
-        selectedCategory: 'Snapshots',
+        selectedCategory: 'Action Items',
         wikiMap: {},
         activePlot: 4,
         wikiData,
@@ -67,15 +77,15 @@ new Vue({
         },
         postNewAction(type) {
 
-            var auto = false;
-            if(action == 'water') {
-                auto == true;
-            }
+            // var auto = false;
+            // if(type == 'water') {
+            //     auto == true;
+            // }
+            console.log(type)
 
             axios.post('/new-plant-action', {
-                plotid: activePlot,
-                action: type,
-                auto
+                plotid: this.activePlot,
+                action: type
             })
             .then(function (response) {
                 console.log(response);
@@ -83,6 +93,8 @@ new Vue({
             .catch(function (error) {
                 console.log(error);
             });
+
+
         },
         openWikiItem(ele) {
             console.log(this.wikiMap, ele)

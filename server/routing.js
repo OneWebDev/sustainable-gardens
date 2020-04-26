@@ -1,10 +1,44 @@
 var express = require('express');
 var router = express.Router();
-// var request = require('request');
+var request = require('request');
 
 router.post('/new-plant-action', (req, res) => {
     // TODO Pass this to other backend
-    res.send(req.body)
+    console.log(req.body)
+    var d = {
+        'enablelight': {
+            plot: '1',
+            type: 'lighton',
+            auto: 'false'
+        },
+        'disablelight': {
+            plot: '1',
+            type: 'lightoff',
+            auto: 'false'
+        }
+    }
+    if(req.body.action in d) {
+        console.log('POSTING', d[req.body.action])
+        var options = { method: 'POST',
+        url: 'http://81377d65.ngrok.io/action',
+        headers: 
+        { 'Postman-Token': 'bb965265-0934-4753-8f76-e1c91c8bbbad',
+            'cache-control': 'no-cache',
+            'Content-Type': 'application/x-www-form-urlencoded' },
+        form: d[req.body.action]
+        };
+
+        request(options, function (error, response, body) {
+        // if (error) throw new Error(error);
+            if(error) {
+                res.send(error)
+            } else {
+                res.send(req.body)
+            }
+        });
+
+    }
+
     // res.sendStatus(200)
 })
 
