@@ -62,7 +62,7 @@
             :class="(index == activePlot) ? 'mt-4 valid-plot' : 'mt-4'" 
             style="border-radius: 20px; border: 5px solid #F4F9F3;">
                 <div class="p-3">
-                    <img src="./img/tomato_img.png" class="w-16 inline-block align-top">
+                    <img :src="getPlantIcon(index)" class="w-16 inline-block align-top rounded-full h-16">
                     <div class="inline-block ml-2 p-2 align-top">
                         <h2 class="text-xl inline-block m-0 font-bold">
                             Plot {{index}}
@@ -83,7 +83,7 @@
         <div style="" class="pt-16 rrrr">
         <!-- <div style="background-color: #F4F9F3; padding-bottom: 1px;" class="pt-16 rrrr"> -->
                 <h1 class="text-3xl font-bold tracking-wide  p-4">
-                Fenwick Tree
+                {{plots[activePlot].type}}
             </h1>
             <!-- <ul>
                 <li class="flex items-center mb-2 p-1 ml-64 rounded-l-full sidebar-active">
@@ -140,18 +140,23 @@
                 </div>
             </div>
             <div v-else-if="selectedCategory == 'Snapshots'">
-                <div v-for="(item, index) in examplePlot.snapshots" :key="index">
+                <div v-for="(item, index) in plots[activePlot].images.filter(e => ! e.includes('default') )" :key="index">
                     <div class="mt-4">
                         <strong class="text-lg">
-                            {{moment(item.date).format("MMMM DD YYYY")}} - 
-                            {{moment(item.date).fromNow()}}
+                            <!-- {{moment(item.date).format("MMMM DD YYYY")}} - 
+                            {{moment(item.date).fromNow()}} -->
+                            {{getTitleText(item)}}
                         </strong>
                         <div class="w-64">
-                            <img :src="item.src" alt="">
-                        </div>
+                            <center>
+                                <img :src="item" alt="">
+                            </center>
+                        </div> 
                     </div>
                 </div>
             </div>
+
+            <br />
         </div>
     </div>
 </div>

@@ -52,7 +52,7 @@ new Vue({
             ]
         },
         categories: ['Action Items', 'Snapshots', 'Live'],
-        selectedCategory: 'Action Items',
+        selectedCategory: 'Snapshots',
         wikiMap: {},
         activePlot: 4,
         wikiData,
@@ -92,15 +92,95 @@ new Vue({
                 this.wikiMap[ele] = ""
             }
             this.wat += 1;
+        },
+        getTitleText(img) {
+            // console.log(img.includes('latest'))
+            var s = "a"
+            if(img.includes('latest')) {
+                s = "Latest Snapshot"
+            } else if (img.includes('default')) {
+                s = 'Original Snapshot'
+            } else {
+                var t = img.split("-")[1].split(".")[0]
+                s = moment(t * 1000).fromNow() + " at " + moment(t * 1000).format("H:mm a")
+            }
+            return s
+        },
+        getPlantIcon(plot) {
+            if(plot >= 5) {
+                return "./img/tomato_img.png"
+            } else {
+                return this.plots[plot].images.filter(e => e.includes('latest'))[0]
+            }
+        },
+        formatData(data) {
+            // console.log(data)
+            var data = data.data
+            var d = {
+                "plot1": {
+                    humid: [],
+                    images: [],
+                    lights: [],
+                    moists: [],
+                    temps: [],
+                    times: [],
+                    type: "Fittonia"
+                },
+                "plot2": {
+                    humid: [],
+                    images: [],
+                    lights: [],
+                    moists: [],
+                    temps: [],
+                    times: [],
+                    type: "Peperomia"
+                }
+            }
+            console.log(data)
+            var size = data.humid.length;
+
+            var uniqueImg = {}
+            for(var i = 0; i < size; i++) {
+                // console.log(data)
+                var humid = data.humid[i];
+                var lights = data.lights[i];
+                var moists = data.moists[i];
+                var temps = data.temps[i];
+                var times = data.times[i];
+                var name = data.names[i]
+                var image = data.images[i]
+                uniqueImg[image] = ""
+                // console.log(name)
+                d[name].humid.push(humid)
+                d[name].lights.push(lights)
+                d[name].moists.push(moists)
+                d[name].temps.push(temps)
+                d[name].times.push(times)
+            }
+
+            var imgArr = Object.keys(uniqueImg)
+            d["plot1"].images = imgArr.filter(e => e.includes('plot1'))
+            d["plot2"].images = imgArr.filter(e => e.includes('plot2'))
+
+            d["plot1"].images.sort().reverse()
+            d["plot2"].images.sort().reverse()
+
+            this.plots["3"] = d["plot1"]
+            this.plots["4"] = d["plot2"]
+
+            console.log(this.plots)
+
+            // console.log(d, uniqueImg)
         }
     },
     mounted() {
-        axios.get('/get-all-data').then(function (response) {
-            console.log(response);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+        this.formatData(serverData);
+        // axios.get('/get-all-data').then(function (response) {
+        //     console.log(response);
+        // })
+        // .catch(function (error) {
+        //     console.log(error);
+        // });
 
     }
 })
