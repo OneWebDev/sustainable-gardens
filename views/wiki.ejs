@@ -59,6 +59,74 @@
     </ul>
 </div><div class="main-page" style="width: calc(100wv - 300px)">
         
+        <div class="wiki-container" style="width: 1400px; margin: auto; padding-left: 300px;">
+            <h1 class="text-4xl font-bold mt-16 tracking-wide">
+                Guides
+            </h1>
+
+            <div class="mt-8">
+                <div v-for="(item, index) in wikiData" :key="index">
+                    <!-- {{item}} -->
+
+
+                <div style="border-radius: 20px; background-color: #F4F9F3; border: 5px solid #F4F9F3;"
+                    class="my-4 p-2 px-4 actionItems"
+                    @click="openWikiItem(index)"
+                    >
+
+
+                        <img :src="item.img" class="w-24 h-24 rounded-full inline-block">
+
+
+                        
+                        <h2 class="text-4xl inline-block ml-10">
+                            <strong>{{index.split(" ").map(e => e[0].toUpperCase() + e.slice(1)).join(" ")  }}
+
+
+                            </strong>
+                        </h2>
+
+                        <div v-if="index in wikiMap">
+                            <br />
+                            <div class="w-1/2 p-6 inline-block align-top" v-if="item.Planting != undefined" >
+                                <h2 class="text-lg">
+                                    <strong>Planting Instructions</strong>
+                                </h2>
+                                <ul class="list-disc">
+                                    <li v-for="(text, index) in item.Planting.split('\n').filter(x => x.length > 10)" :key="index">
+                                    {{text}}
+                                </li>
+                                </ul>
+                            </div><div class="w-1/2 p-6 inline-block" v-if="item.Care != undefined" >
+                                <h2 class="text-lg">
+                                    <strong>Plant Care Tips</strong>
+                                </h2>
+                                <ul class="list-disc">
+                                    <li v-for="(text, index) in item.Care.split('\n').filter(x => x.length > 10)" :key="index">
+                                    {{text}}
+                                </li>
+                                </ul>
+        
+                            </div>
+                            <br />
+                            <a :href="item.src">More Info: {{item.src}}</a>
+    
+
+                        </div>
+                        <div v-else>
+                            <span style="display: none;">
+                                {{wat}}
+                            </span>
+                        </div>
+
+                    </h2>
+                    </div>
+    
+
+                </div>
+            </div>
+
+        </div>
 
     </div>
 </div>
@@ -81,6 +149,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./wiki.js"></script>
     <script src="./frontend.js"></script>
 
     <script type="text/javascript" src="http://livejs.com/live.js"></script>

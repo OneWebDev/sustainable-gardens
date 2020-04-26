@@ -53,7 +53,10 @@ new Vue({
         },
         categories: ['Action Items', 'Snapshots', 'Live'],
         selectedCategory: 'Action Items',
-        activePlot: 4
+        wikiMap: {},
+        activePlot: 4,
+        wikiData,
+        wat: 0
     },
     methods: {
         newActivePlot(n) {
@@ -73,6 +76,15 @@ new Vue({
             .catch(function (error) {
                 console.log(error);
             });
+        },
+        openWikiItem(ele) {
+            console.log(this.wikiMap, ele)
+            if(ele in this.wikiMap) {
+                delete this.wikiMap[ele]
+            } else {
+                this.wikiMap[ele] = ""
+            }
+            this.wat += 1;
         }
     },
 })
