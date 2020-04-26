@@ -113,9 +113,9 @@ new Vue({
             } else if (img.includes('default')) {
                 s = 'Original Snapshot'
             } else if (img.includes('carrot')) {
-                s = "Carrot growth stage " + img[img.length - 5]
+                s = "growth stage " + img[img.length - 5]
             } else if (img.includes('onion')) {
-                s = "Onion growth stage " + img[img.length - 5]
+                s = "growth stage " + img[img.length - 5]
             }else {
                 var t = img.split("-")[1].split(".")[0]
                 s = moment(t * 1000).fromNow() + " at " + moment(t * 1000).format("H:mm a")
@@ -136,7 +136,10 @@ new Vue({
             }
         },
         getPlantStat(plot, stat) {
-            return this.plots[plot][stat][this.plots[plot][stat].length - 1];
+            if(stat == 'moists') {
+                return this.plots[plot][stat][this.plots[plot][stat].length - (plot * 25)];
+            }
+            return this.plots[plot][stat][this.plots[plot][stat].length - (plot * 10)];
         },
         formatData(data) {
             // console.log(data)
