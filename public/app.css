@@ -1,7 +1,10 @@
+body {
+    /* overflow-y: hidden; */
+}
 .page-wrapper > div {
     display: inline-block;
     vertical-align: top;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 .left-sidebar {
@@ -12,21 +15,38 @@
 }
 
 .main-page {
-    width: 700px;
+    /* width: 720px; */
+    /* margin-left: 220px; */
+    /* width: 100%; */
+    /* margin: 0px auto; */
+    /* width: calc(100vw - 240px - 500px - 40px);
+    margin-left: calc((100vw - 220px - 500px - 720px) / 2); */
+    /* margin-right: calc(110px + (100vw - 220px - 500px - 720px) / 2); */
+    /* padding: 0px 100px; */
+    /* padding-left: 220px; */
+    height: 100vh!important;
+    max-height: 100vh!important;
+    width: calc(100vw - 500px - 22px - 220px);
+    /* background-color: red; */
     margin-left: 220px;
-    /* width: calc(100vw - 240px - 400px - 20px);
-    margin-left: 220px; */
-    padding: 0px 100px;
+
+    /* overflow-x: hidden; */
 }
 
 .right-sidebar {
     width: 500px;
+    position: fixed;
+    right: 0px;
+    height: 100vh;
+    /* height: 200px; */
+    overflow-y: scroll;
 }
 
-/* .better-container {
-    max-width: 900px;
-    margin-left: 150px;
-} */
+.better-container {
+    width: 500px;
+    margin: auto;
+    /* margin-left: 150px; */
+}
 
 @media only screen and (max-width: 1200px) {
     .main-page {

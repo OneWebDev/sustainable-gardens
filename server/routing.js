@@ -11,5 +11,8 @@ router.post('/new-plant-action', (req, res) => {
 router.get('/', (req, res) => {
     res.render('home')
 })
+router.get('/wiki', (req, res) => {
+    res.render('wiki')
+})
 
 module.exports = router;
