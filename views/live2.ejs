@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1500px">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+    <title>Sustainble Gardens</title>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+
+        <!-- Sidebar -->
+
+
+
+    <div class="page-wrapper">
+        <div class="left-sidebar">
+    <h1 class="text-4xl text-center mt-8 font-bold tracking-wide text-white" style="width: 220px;">
+        Plantr
+    </h1>
+    <ul class="mt-20">
+        <a href="/">
+            <li class="flex items-center mb-6 p-3 ml-3 rounded-l-full">
+                <img src="./icons/plant.svg" class="inline-block ml-6 w-6">
+                <span class="text-xl text-white ml-6">
+                    My Plants
+                </span>    
+            </li>
+        </a>
+        <li class="flex items-center mb-6 p-3 ml-3 rounded-l-full">
+            <img src="./icons/alerts.svg" class="inline-block ml-6 w-6">
+            <span class="text-xl text-white ml-6">
+                Alerts
+            </span>    
+        </li>
+        <li class="flex items-center mb-6 p-3 ml-3 rounded-l-full">
+            <img src="./icons/wiki.svg" class="inline-block ml-6 w-6">
+            <span class="text-xl text-white ml-6">
+                Guides
+            </span>    
+        </li>
+        <li class="flex items-center mb-6 p-3 ml-3 rounded-l-full sidebar-active">
+            <img src="./icons/plots.svg" class="inline-block ml-6 w-6">
+            <span class="text-xl text-white ml-6">
+                Live Stream
+            </span>    
+        </li>
+        <li class="flex items-center mb-6 p-3 ml-3 rounded-l-full">
+            <img src="./icons/settings.svg" class="inline-block ml-6 w-6">
+            <span class="text-xl text-white ml-6">
+                Settings
+            </span>    
+        </li>
+    </ul>
+</div><div class="main-page" style="width: calc(100vw - 300px);">
+        <link rel="stylesheet" href="./styles/style.css">
+
+        <div class="wiki-container" style="width: 70%; margin: auto;">
+
+            <div class="mt-8">
+                <h1 class="text-4xl font-bold mt-16 tracking-wide text-left">
+                    Live Stream
+                </h1>
+    
+                <center>
+                    <div id="remote-container"></div>
+                </center>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+    <br />
+    <br />
+
+
+
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <!-- Full bundle -->
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+
+    <!-- Individual components -->
+    <script src="https://unpkg.com/buefy/dist/components/table"></script>
+    <script src="https://unpkg.com/buefy/dist/components/input"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./wiki.js"></script>
+    <script src="./frontend.js"></script>
+
+    <script src="http://cdn.agora.io/sdk/web/AgoraRTCSDK-2.4-latest.js"></script>
+    <script src="./scripts/script.js"></script>
+
+    <!-- <script type="text/javascript" src="http://livejs.com/live.js"></script> -->
+</body>
+</html>

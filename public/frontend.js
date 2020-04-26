@@ -66,9 +66,16 @@ new Vue({
             this.selectedCategory = n;
         },
         postNewAction(type) {
+
+            var auto = false;
+            if(action == 'water') {
+                auto == true;
+            }
+
             axios.post('/new-plant-action', {
-                plot: activePlot,
-                type
+                plotid: activePlot,
+                action: type,
+                auto
             })
             .then(function (response) {
                 console.log(response);
@@ -87,6 +94,15 @@ new Vue({
             this.wat += 1;
         }
     },
+    mounted() {
+        axios.get('/get-all-data').then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+    }
 })
 
 

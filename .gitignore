@@ -1,1 +1,5 @@
 node_modules
+
+# Live Stream Agora Keys
+public/scripts/script.js
+agora/scripts/script.js
