@@ -80,11 +80,12 @@
     </div>
 </div><div class="right-sidebar">
     <div class="">
-        <div style="background-color: #F4F9F3; padding-bottom: 1px;" class="pt-16 rrrr">
-            <h1 class="text-3xl font-bold tracking-wide ml-12 p-4">
+        <div style="" class="pt-16 rrrr">
+        <!-- <div style="background-color: #F4F9F3; padding-bottom: 1px;" class="pt-16 rrrr"> -->
+                <h1 class="text-3xl font-bold tracking-wide  p-4">
                 Fenwick Tree
             </h1>
-            <ul>
+            <!-- <ul>
                 <li class="flex items-center mb-2 p-1 ml-64 rounded-l-full sidebar-active">
                     <span class="text-xl text-white ml-6">
                         Plant Details    
@@ -94,12 +95,7 @@
                         Growing Guide
                     </span>    
                 </li>
-                <!-- <li class="flex items-center mb-2 p-1 ml-64 rounded-l-full">
-                    <span class="text-xl ml-6">
-                        Plant Settings
-                    </span>    
-                </li> -->
-            </ul>
+            </ul> -->
             
         </div>
 
@@ -116,7 +112,7 @@
             </li>
         </ul>
 
-        <div class="mt-8">
+        <div class="mt-12">
             <span v-for="(item, index) in categories" :key="index">
                 <span v-if="selectedCategory == item" 
                 class="text-2xl font-black text-black px-5 tracking-wide">

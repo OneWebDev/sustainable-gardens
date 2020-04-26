@@ -1,3 +1,5 @@
+[v-cloak] { display: none; }
+
 body {
     /* overflow-y: hidden; */
 }
@@ -77,6 +79,11 @@ body {
     background-color: #279152;
     cursor: pointer;
     color: white;
+}
+
+.left-sidebar > ul > a > li:hover:not(.sidebar-active) {
+    background-color: #279152;
+    cursor: pointer;
 }
 
 .left-sidebar > ul > li:hover:not(.sidebar-active) {
