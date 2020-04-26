@@ -171,7 +171,7 @@
             <div v-else-if="selectedCategory == 'Snapshots'">
                 <div v-for="(item, index) in plots[activePlot].images.filter(e => ! e.includes('default') )" :key="index">
                     <div class="mt-4">
-                        <div class="w-64" style="width: 80%; position: relative; margin: auto;">
+                        <div class="w-64" style="width: 80%; position: relative; min-height: 80px; margin: auto;">
                             <center>
                                 <img :src="item" alt="" style="border-radius: 10px;margin: 2px;">
                             </center>
