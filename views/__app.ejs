@@ -1,35 +1,35 @@
 <div class="left-sidebar">
-    <h1 class="text-4xl text-center mt-8 font-bold tracking-wide text-white" style="width: 220px;">
+    <h1 class="text-4xl text-center mt-8 font-bold tracking-wide text-white" style="width: 260px;">
         Plantr
     </h1>
     <ul class="mt-20">
-        <li class="flex items-center mb-6 p-3 ml-3 rounded-l-full sidebar-active">
+        <li class="flex items-center mb-6 p-3 ml-4 rounded-l-full sidebar-active">
             <img src="./icons/plant.svg" class="inline-block ml-6 w-6">
             <span class="text-xl text-white ml-6">
                 My Plants
             </span>    
         </li>
-        <li class="flex items-center mb-6 p-3 ml-3 rounded-l-full">
+        <li class="flex items-center mb-6 p-3 ml-4 rounded-l-full">
             <img src="./icons/alerts.svg" class="inline-block ml-6 w-6">
             <span class="text-xl text-white ml-6">
                 Alerts
             </span>    
         </li>
         <a href="/wiki">
-            <li class="flex items-center mb-6 p-3 ml-3 rounded-l-full">
+            <li class="flex items-center mb-6 p-3 ml-4 rounded-l-full">
                 <img src="./icons/wiki.svg" class="inline-block ml-6 w-6">
                 <span class="text-xl text-white ml-6">
                     Guides
                 </span>    
             </li>
         </a>
-        <li class="flex items-center mb-6 p-3 ml-3 rounded-l-full">
+        <li class="flex items-center mb-6 p-3 ml-4 rounded-l-full">
             <img src="./icons/plots.svg" class="inline-block ml-6 w-6">
             <span class="text-xl text-white ml-6">
                 Add Plots
             </span>    
         </li>
-        <li class="flex items-center mb-6 p-3 ml-3 rounded-l-full">
+        <li class="flex items-center mb-6 p-3 ml-4 rounded-l-full">
             <img src="./icons/settings.svg" class="inline-block ml-6 w-6">
             <span class="text-xl text-white ml-6">
                 Settings
@@ -48,8 +48,8 @@
                 </div>
                 <div class="plot-background inline-block rounded-lg valid-plot" 
                 @click="newActivePlot(n)" v-else>
-                    <img src="./icons/plant_filled.svg" class="plant-icon-main" style="width: 60px; margin: 20px;" v-if="activePlot == n">
-                    <img src="./icons/plant_filled.svg" class="plant-icon-main hover-img-icon" style="width: 60px; margin: 20px;" v-if="activePlot != n">
+                    <img src="./icons/plant_filled.svg" class="plant-icon-main" style="width: 40px; margin: 16px;" v-if="activePlot == n">
+                    <img src="./icons/plant_filled.svg" class="plant-icon-main hover-img-icon" style="width: 40px; margin: 16px;" v-if="activePlot != n">
                 </div>
             </div>
         </div>
@@ -64,8 +64,8 @@
                 <div class="p-3">
                     <img src="./img/tomato_img.png" class="w-16 inline-block align-top">
                     <div class="inline-block ml-2 p-2 align-top">
-                        <h2 class="text-xl inline-block m-0">
-                            Plot {{index}} 
+                        <h2 class="text-xl inline-block m-0 font-bold">
+                            Plot {{index}}
                         </h2>
                         <h2 class="inline-block ml-4 text-lg">
                             {{plot.type}}
@@ -99,7 +99,7 @@
             
         </div>
 
-        <ul class="mt-8">
+        <ul class="mt-8 pr-6">
             <li v-for="(item, index) in examplePlot.attr" :key="index" 
             class="flex items-center p-3 py-1 ml-3 mx-8 rounded-l-full">
                 <img :src="`./icons/${index}.svg`" class="inline-block ml-12 w-8">
@@ -115,16 +115,16 @@
         <div class="mt-12">
             <span v-for="(item, index) in categories" :key="index">
                 <span v-if="selectedCategory == item" 
-                class="text-2xl font-black text-black px-5 tracking-wide">
+                class="text-2xl font-bold text-black px-5 ">
                     {{item}}
                 </span>
                 <span v-else @click="changeCategory(item)"
-                class="text-2xl font-black text-gray-400 px-5 tracking-wide hover:text-black cursor-pointer">
+                class="text-2xl font-bold text-gray-400 px-5 hover:text-black cursor-pointer">
                     {{item}}
                 </span>
             </span>
         </div>
-        <div class="mt-2">
+        <div class="mt-2 pl-2 pr-10 pt-2">
             <div v-if="selectedCategory == 'Action Items'">
                 <div v-for="(item, index) in examplePlot.actions" :key="index" 
                 style="border-radius: 20px; background-color: #F4F9F3; border: 5px solid #F4F9F3;"

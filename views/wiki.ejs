@@ -57,9 +57,9 @@
             </span>    
         </li>
     </ul>
-</div><div class="main-page" style="width: calc(100wv - 300px)">
+</div><div class="main-page" style="width: calc(100vw - 300px);">
         
-        <div class="wiki-container" style="width: 1400px; margin: auto; padding-left: 300px;">
+        <div class="wiki-container" style="width: 70%; margin: auto;">
             <h1 class="text-4xl font-bold mt-16 tracking-wide">
                 Guides
             </h1>
@@ -69,17 +69,17 @@
                     <!-- {{item}} -->
 
 
-                <div style="border-radius: 20px; background-color: #F4F9F3; border: 5px solid #F4F9F3;"
+                <div style="border-radius: 20px; width: 100%; background-color: #F4F9F3; border: 5px solid #F4F9F3;"
                     class="my-4 p-2 px-4 actionItems"
                     @click="openWikiItem(index)"
                     >
 
 
-                        <img :src="item.img" class="w-24 h-24 rounded-full inline-block">
+                        <img :src="item.img" class="w-20 h-20 rounded-full inline-block">
 
 
                         
-                        <h2 class="text-4xl inline-block ml-10">
+                        <h2 class="text-2xl inline-block ml-10">
                             <strong>{{index.split(" ").map(e => e[0].toUpperCase() + e.slice(1)).join(" ")  }}
 
 

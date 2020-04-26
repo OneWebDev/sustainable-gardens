@@ -1,5 +1,9 @@
 [v-cloak] { display: none; }
 
+* {
+    transition: all .1s ease-in-out;
+}
+
 body {
     /* overflow-y: hidden; */
 }
@@ -10,9 +14,9 @@ body {
 }
 
 .left-sidebar {
-    width: 220px;
+    width: 260px;
     height: 100vh;
-    background-color: #32a05f;
+    background-color: #73AF86;
     position: fixed;
 }
 
@@ -28,9 +32,9 @@ body {
     /* padding-left: 220px; */
     height: 100vh!important;
     max-height: 100vh!important;
-    width: calc(100vw - 500px - 22px - 220px);
+    width: calc(100vw - 500px - 22px - 260px);
     /* background-color: red; */
-    margin-left: 220px;
+    margin-left: 260px;
 
     /* overflow-x: hidden; */
 }
@@ -72,22 +76,22 @@ body {
     }
 }
 .sidebar-active {
-    background-color: #279152;
+    background-color: #639C76;
 }
 
 .rrrr > ul > li:hover:not(.sidebar-active) {
-    background-color: #279152;
+    background-color: #639C76;
     cursor: pointer;
     color: white;
 }
 
 .left-sidebar > ul > a > li:hover:not(.sidebar-active) {
-    background-color: #279152;
+    background-color: #639C76;
     cursor: pointer;
 }
 
 .left-sidebar > ul > li:hover:not(.sidebar-active) {
-    background-color: #279152;
+    background-color: #639C76;
     cursor: pointer;
 }
 
@@ -98,13 +102,15 @@ body {
 }
 
 .plant-grid {
-    width: 600px;
+    width: 400px;
+    padding-top: 20px;
 }
 
 .plot-background {
-    width: 115px;
+    width: 80px;
     margin: 5px;
-    height: 100px;
+    height: 80px;
+    border-radius: 15px;
     display: inline-block;
     background-color: #EAF4ED;
 }
