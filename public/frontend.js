@@ -107,12 +107,16 @@ new Vue({
         },
         getTitleText(img) {
             // console.log(img.includes('latest'))
-            var s = "a"
+            var s = ""
             if(img.includes('latest')) {
                 s = "Latest Snapshot"
             } else if (img.includes('default')) {
                 s = 'Original Snapshot'
-            } else {
+            } else if (img.includes('carrot')) {
+                s = "Carrot growth stage " + img[img.length - 5]
+            } else if (img.includes('onion')) {
+                s = "Onion growth stage " + img[img.length - 5]
+            }else {
                 var t = img.split("-")[1].split(".")[0]
                 s = moment(t * 1000).fromNow() + " at " + moment(t * 1000).format("H:mm a")
             }
@@ -120,7 +124,13 @@ new Vue({
         },
         getPlantIcon(plot) {
             if(plot >= 5) {
-                return "./img/tomato_img.png"
+                if(plot == 6) {
+                    return "./img/carrot4.png"
+                }
+                if(plot == 7) {
+                    return "./img/onion4.png"
+                }
+                // return "./img/tomato_img.png"
             } else {
                 return this.plots[plot].images.filter(e => e.includes('latest'))[0]
             }
@@ -183,7 +193,17 @@ new Vue({
             this.plots["3"] = d["plot1"]
             this.plots["4"] = d["plot2"]
 
-            console.log(this.plots)
+            this.plots["6"] = JSON.parse(JSON.stringify(d["plot1"]))
+            this.plots["7"] = JSON.parse(JSON.stringify(d["plot2"]))
+            
+            this.plots["6"].type = "Carrot"
+            this.plots["7"].type = "Onion"
+
+            this.plots["6"].images = ["./img/carrot1.png", "./img/carrot2.png", "./img/carrot3.png", "./img/carrot4.png"].reverse()
+            this.plots["7"].images = ["./img/onion1.png", "./img/onion2.png", "./img/onion3.png", "./img/onion4.png"].reverse()
+
+
+            console.log("here", this.plots)
 
             // console.log(d, uniqueImg)
         }
