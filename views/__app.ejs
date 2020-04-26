@@ -99,7 +99,7 @@
             
         </div>
 
-        <ul class="mt-8 pr-6">
+        <!-- <ul class="mt-8 pr-6">
             <li v-for="(item, index) in examplePlot.attr" :key="index" 
             class="flex items-center p-3 py-1 ml-3 mx-8 rounded-l-full">
                 <img :src="`./icons/${index}.svg`" class="inline-block ml-12 w-8">
@@ -110,7 +110,36 @@
                 </span>    
                 {{item}}
             </li>
-        </ul>
+        </ul> -->
+
+        <ul class="mt-8 pr-6">
+            <li class="flex items-center p-3 py-1 ml-3 mx-8 rounded-l-full"><img src="./icons/health.svg" class="inline-block ml-12 w-8"> <span class="text-xl ml-6" style="width: 100%;"><strong>
+               health
+               </strong></span>    
+               Healthy
+            </li>
+            <li class="flex items-center p-3 py-1 ml-3 mx-8 rounded-l-full"><img src="./icons/water.svg" class="inline-block ml-12 w-8"> <span class="text-xl ml-6" style="width: 100%;"><strong>
+               water
+               </strong></span>    
+               {{getPlantStat(activePlot, 'moists')}}
+            </li>
+            <li class="flex items-center p-3 py-1 ml-3 mx-8 rounded-l-full"><img src="./icons/humidity.svg" class="inline-block ml-12 w-8"> <span class="text-xl ml-6" style="width: 100%;"><strong>
+               humidity
+               </strong></span>    
+               {{getPlantStat(activePlot, 'humid')}}
+            </li>
+            <li class="flex items-center p-3 py-1 ml-3 mx-8 rounded-l-full"><img src="./icons/light.svg" class="inline-block ml-12 w-8"> <span class="text-xl ml-6" style="width: 100%;"><strong>
+               light
+               </strong></span>    
+               {{100 * getPlantStat(activePlot, 'lights') / 1000 }}&nbsp;%
+            </li>
+            <li class="flex items-center p-3 py-1 ml-3 mx-8 rounded-l-full"><img src="./icons/size.svg" class="inline-block ml-12 w-8"> <span class="text-xl ml-6" style="width: 100%;"><strong>
+               size
+               </strong></span>    
+               {{getPlantStat(activePlot, 'temps')}}&nbsp;°F
+            </li>
+         </ul>
+
 
         <div class="mt-12">
             <span v-for="(item, index) in categories" :key="index">

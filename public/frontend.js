@@ -113,6 +113,9 @@ new Vue({
                 return this.plots[plot].images.filter(e => e.includes('latest'))[0]
             }
         },
+        getPlantStat(plot, stat) {
+            return this.plots[plot][stat][this.plots[plot][stat].length - 1];
+        },
         formatData(data) {
             // console.log(data)
             var data = data.data
